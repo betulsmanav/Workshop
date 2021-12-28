@@ -36,3 +36,6 @@ Sorguda ArtistId, Name, Title ve AlbumId olmalıdır */
 	FROM artists ar
 	LEFT JOIN albums al ==soldaki tablonun tum verilerini almak icin.
 	on ar.ArtistId = al.ArtistId;
+	
+	
+	

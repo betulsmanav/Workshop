@@ -1,3 +1,5 @@
+Assignment - 1
+
 /*1. Write a query that displays InvoiceId, CustomerId and total dollar amount 
 for each invoice, sorted first by CustomerId (in ascending order),
 and then by total dollar amount  (in descending order).*/
@@ -69,3 +71,40 @@ SELECT BillingCountry, InvoiceDate
 FROM  invoices
 WHERE (BillingCountry IN('USA', 'Germany', 'Norway', 'Canada')) AND (InvoiceDate  BETWEEN '2010-01-01 00:00:00'  AND  '2010-12-31 00:00:00')
 ORDER by InvoiceDate desc;
+
+
+/*Assignment - 2 (SQL | Aggregate Functions & JOINs)
+
+1-How many tracks does each album have? Your solution should include 
+Album id and its number of tracks sorted from highest to lowest.*/
+
+	
+	SELECT AlbumId,count(name)as parca_sayisi
+	FROM tracks
+	group by AlbumId
+	ORDER By  parca_sayisi DESC;
+
+	2-Find the album title of the tracks. Your solution should include track name and its album title.
+
+	SELECT * FROM tracks;
+	SELECT * FROM albums;
+	
+	SELECT t.name, a.Title, a.AlbumId
+	FROM tracks t
+	JOIN albums a
+	on a.AlbumId = t.AlbumId;
+	
+	
+	/*3-Find the minimum duration of the track in each album.
+	Your solution should include album id, album title and duration of the track
+	sorted from highest to lowest.*/
+
+	
+	SELECT albums.AlbumId,tracks.name, albums.Title, min(tracks.Milliseconds) as parca_min_süre
+	FROM tracks
+	JOIN albums
+	ON  albums.AlbumId= tracks.AlbumId
+	GROUP by albums.Title
+	ORDER by albums.AlbumId DESC;
+		
+	
