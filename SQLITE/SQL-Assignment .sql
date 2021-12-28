@@ -73,18 +73,21 @@ WHERE (BillingCountry IN('USA', 'Germany', 'Norway', 'Canada')) AND (InvoiceDate
 ORDER by InvoiceDate desc;
 
 
-/*Assignment - 2 (SQL | Aggregate Functions & JOINs)
+	/*Assignment - 2 (SQL | Aggregate Functions & JOINs)
 
-1-How many tracks does each album have? Your solution should include 
-Album id and its number of tracks sorted from highest to lowest.*/
-
+	1-How many tracks does each album have? Your solution should include 
+	Album id and its number of tracks sorted from highest to lowest.*/
+	
+	/*!! albumid leri ayni olan kac tane name var sayidr ve bunu name e gore azalan sirala*/
 	
 	SELECT AlbumId,count(name)as parca_sayisi
 	FROM tracks
 	group by AlbumId
 	ORDER By  parca_sayisi DESC;
 
-	2-Find the album title of the tracks. Your solution should include track name and its album title.
+	/*2-Find the album title of the tracks. Your solution should include track name and its album title.
+	tracks tablosu ve albums tablosunu coin ile birlestir name ve title sutunlarini listele*/
+	
 
 	SELECT * FROM tracks;
 	SELECT * FROM albums;
@@ -97,14 +100,40 @@ Album id and its number of tracks sorted from highest to lowest.*/
 	
 	/*3-Find the minimum duration of the track in each album.
 	Your solution should include album id, album title and duration of the track
-	sorted from highest to lowest.*/
+	sorted from highest to lowest.
+	her albumun icindeki en kisa Milliseconds bul AlbumId Title Milliseconds olarak listele AlbumId desc olsun */
 
 	
-	SELECT albums.AlbumId,tracks.name, albums.Title, min(tracks.Milliseconds) as parca_min_süre
-	FROM tracks
-	JOIN albums
-	ON  albums.AlbumId= tracks.AlbumId
-	GROUP by albums.Title
-	ORDER by albums.AlbumId DESC;
+	SELECT a.AlbumId, a.Title, min(t.Milliseconds)as an_kisa_parca
+	FROM tracks t
+	JOIN albums a
+	on a.AlbumId = t.AlbumId
+	GROUP by a.Title
+	ORDER by a.AlbumId DESC;
 		
+		
+	/* 4- Find the total duration of each album. 
+	Your solution should include album id, album title and its total duration sorted from highest to lowest.
+	her albumdeki parcalarin suresinin toplamin bul AlbumId Title ve avg Milliseconds olarak listele*/
+	
+	
+	SELECT a.AlbumId, a.Title, sum(t.Milliseconds) as toplam_sure
+	FROM tracks t
+	JOIN albums a
+	on t.AlbumId = a.AlbumId
+	GROUP BY a.AlbumId
+	ORDER by toplam_sure DESC;
+	
+	
+	
+	/* 5- Based on the previous question, find the albums whose total duration is higher than 70 minutes. 
+	Your solution should include album title and total duration*/
+	
+	
+	SELECT a.Title, sum(t.Milliseconds) as toplam_sure
+	FROM tracks t
+	JOIN albums a
+	on a.AlbumId = t.AlbumId
+	GROUP by a.Title
+	HAVING toplam_sure > 4200000;
 	
