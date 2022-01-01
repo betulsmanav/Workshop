@@ -137,3 +137,105 @@ ORDER by InvoiceDate desc;
 	GROUP by a.Title
 	HAVING toplam_sure > 4200000;
 	
+	/*Assignment - 3 (SQL | Subqueries and DDL-DML Commands)*/
+	
+		/*Write a query to find the maximum duration among the tracks. 
+		Your query should include TrackId, Name, Milliseconds.*/
+	SELECT TrackId, name, Milliseconds 
+	FROM tracks
+	WHERE Milliseconds  in(SELECT max(Milliseconds) from tracks);
+
+	/*Write a query to find the minimum duration among the tracks.
+	Your query should include TrackId, Name, Milliseconds.*/
+	
+	SELECT TrackId, name, Milliseconds 
+	FROM tracks
+	WHERE Milliseconds  in(SELECT min(Milliseconds) from tracks);
+
+	/*Write a query to find the tracks whose bytes are higher than the average of the bytes of all tracks.
+	Your query should include TrackId, Name, Bytes, general average and should be ordered by Bytes from highest to lowest. 
+	General average is the average of all tracks. General average should repeat in every row. 
+	(Hint: You need to use two subqueries)*/
+
+
+	SELECT TrackId, name, Bytes 
+	FROM tracks
+	WHERE Bytes >(SELECT avg(Bytes) from tracks)
+	ORDER by Bytes DESC;
+	
+	/*Write a query that returns the customers whose sales representatives are Jane Peacock and Margaret Park. 
+	Your query should include CustomerID, First Name and Last Name of the customers.
+	Satış temsilcileri Jane Peacock ve Margaret Park olan müşterileri döndüren bir sorgu yazın. 
+    Sorgunuz, müşterilerin Müşteri Kimliği, Adı ve Soyadı'nı içermelidir.*/
+	
+	SELECT CustomerId, FirstName, LastName, SupportRepId
+	FROM customers
+	WHERE SupportRepId in (SELECT EmployeeId
+	                     FROM employees
+						 WHERE FirstName = 'Jane' or FirstName = 'Margaret');
+						 
+	/*Rewrite the subquery above using the JOIN.*/
+
+    SELECT c.CustomerId, c.FirstName, c. LastName,e.FirstName
+	FROM customers c
+	JOIN employees e
+	on e.EmployeeId = c.SupportRepId
+	WHERE e.FirstName = 'Jane' or e.FirstName = 'Margaret';
+
+
+	/*Create a table inside the chinook database. This table tracks the employees’ courses inside the organization. Your table should have the followings features:
+
+               Name of the table: courses
+               Columns:
+                    CourseId (Primary Key)
+                    CourseName (Cannot be null)
+                    EmployeeId (Foreign Key - Refers to EmployeeId of employees table ) 
+                    CoursePrice*/
+					
+					
+	CREATE TABLE  if not EXISTS courses (
+		CourseId INTEGER,
+		CourseName NOT NULL,
+		EmployeeId INTEGER,
+		CoursePrice INTEGER,
+		PRIMARY KEY (CourseId),
+		FOREIGN KEY (EmployeeId) REFERENCES employees (EmployeeId)
+		
+		);
+		
+		/*Insert at least 5 rows into the courses table.
+		Your EmployeeId should contain the values of the EmployeeId column on the employees table. 
+		You’re free to choose any values for other columns (CourseId, CourseName, CoursePrice)
+		
+		
+		Dersler tablosuna en az 5 satır ekleyin. 
+		Çalışan Kimliğiniz, çalışanlar tablosundaki Çalışan Kimliği sütununun değerlerini içermelidir. 
+		Diğer sütunlar için herhangi bir değer seçmekte özgürsünüz (CourseId, CourseName, CoursePrice)*/
+		
+		
+		INSERT INTO courses VALUES (12, 'matematik', 8, 5000);
+		INSERT INTO courses VALUES (13, 'fizik', 7, 4000);
+		INSERT INTO courses VALUES (14, 'kimya', 6, 7000);
+		INSERT INTO courses VALUES (15, 'biyoloji', 5, 1000);
+		INSERT INTO courses VALUES (16, 'ingilizce', 1, 3000);
+		
+		
+	/*Delete the last row of your courses table.*/	
+	DELETE
+	FROM courses
+	WHERE EmployeeId = 1;
+	
+	/*Add a new column to your courses table named StartDate. The new column cannot be null.*/	
+		
+		
+	ALTER TABLE courses 
+    ADD StarDate TEXT NOT NULL;
+	
+	/*Delete the CoursePrice column.*/
+	
+	ALTER TABLE courses
+	DROP COLUMN CoursePrice;
+	
+	/*Delete the courses table.*/
+	
+	DROP TABLE if EXISTS courses;
