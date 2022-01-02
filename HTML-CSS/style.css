@@ -1,0 +1,72 @@
+*{
+    text-align:center;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+h1{
+    color: slateblue;
+    text-align: center;
+    background-color: rgb(226, 208, 231);
+    margin: 0;
+}
+
+a{
+    background-color: rgb(149, 250, 16);
+    text-decoration: none;
+}
+
+
+.takimH1{
+    background-color: cyan;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.geriDon{
+    font-style: italic;
+    font-weight: 900;
+}
+
+.iller{
+    text-align: left;
+    list-style-type: '🥦';
+    /* emojipedia dan copy yap yapistir
+    flaticon.com fan iconlari kopyalayabilirsin */
+}
+
+/* li{
+    text-align: left;
+} */ /* bunu yaparsam butun li leri left yapar */
+
+
+.iller li{
+    background-color: aqua;
+    /* display: inline-block; */
+    padding: 1rem 2rem;
+    margin-left: 1rem;
+    width: 3rem;
+    border: 1rem solid rgb(1, 94, 91);
+    /* border-top: aquamarine; */
+    border-radius: 8px;
+}
+
+.baslik{
+    padding: 2rem;
+    
+   
+}
+
+.bgBaslik{
+    padding: 5rem;
+    color: bisque;
+    background-image: url(alexander-schimmeck-ybeNKSK3fUk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center center; */
+}
