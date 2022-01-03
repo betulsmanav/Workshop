@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+    /* tum herseye etki eder
+    genislik ve yuksekligin degerini sabitliyorum degisime kapali */
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #dbdbdb;
+    font-family: 'Oxygen', sans-serif;
+}
+
+#social{ /* id tanimlama icin # kullanilir */
+    background-color: black;
+    color: white;
+    height: 55px;
+    width: 100%;
+    /* sayfa kayarken sabit kalsim */
+    position: sticky;
+    top: 0; /* yukarida 0 pozisyonuna yapissin */
+    z-index: 1; /* sayfa uzerinde herhangi birseyin social barin uzerine cikmasini engellemek icin */
+    font-size: 18px;/* social de ki icerikler icin font buyuklugu */
+    text-align: right;/* yazilari merkeze ortala */
+    padding: 15px;
+}
+
+font{
+
+    float: left; /* sayfanin solunda */
+    letter-spacing: 2px; /* yazilarin arasini acma */
+}
+
+span{
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#social>i{ /* social icindeki i lere mudahale */
+    
+    margin-right: 15px;
+
+} 
+
+#social>i:hover{ /* hover: mouse ile uzeine geldigimde */
+    opacity: 0,8;
+}
+
+#container{
+    width: 80%;
+    margin: auto;
+    height: auto;
+}
+
+header{
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    color:white;
+    font-family: 'Teko', sans-serif;
+    font-size: 35px;
+}
+#headerResim{
+    width: 100%;
+    height: 250px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+#centered{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
