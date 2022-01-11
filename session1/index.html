@@ -1,12 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is an online IT Bootcamp" />
+    <meta
+      name="keywords"
+      content="IT, Bootcamp, Online, Full Stack, AWS, Data Science"
+    />
+    <meta name="author" content="Clarusway-FS Path" />
+    <link rel="shortcut icon" href="./images/cw-favicon.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="#" />
+    <title>Clarusway</title>
+  </head>
+  <body>
+    <h1>HTML CSS Review</h1>
+    <!--Headings  -->
+    <!-- h$*6 ile hizli yap -->
+
+    <h1>Heading Element</h1>
+    <h2>Heading element</h2>
+    <h3>Heading element</h3>
+    <h4>Heading element</h4>
+    <h5>Heading element</h5>
+    <h6>Heading element</h6>
+
+    <!-- Text -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ducimus!
+    </p>
+    <br />
+    <hr />
+    <p>
+      Lorem ipsum <b>dolor sit</b> amet consectetur
+      <strong>adipisicing</strong> elit.
+    </p>
+
+    <p>
+      Lorem <i>ipsum dolor sit</i> , amet consectetur
+      <em>adipisicing elit</em> . Itaque, voluptates.
+    </p>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur <u>adipisicing elit.</u> Nemo,
+      placeat?
+    </p>
+    <p>phone: <del>800$</del> 500$</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <mark>Laborum, iste.</mark>
+    </p>
+    <p>X<sup>2</sup></p>
+    <p>O<sub>2</sub></p>
+    <hr />
+
+    <!-- Lists -->
+    <h3>Unordered Lists</h3>
+    <h3>Cars</h3>
+    <ul>
+      <li>Ferrari</li>
+      <ul>
+        <li>Before 2000</li>
+        <li>After 2000</li>
+      </ul>
+      <li>Porche</li>
+      <li>Tesla</li>
+    </ul>
+    <hr />
+
+    <h3>Ordered List</h3>
+    <h3>Cities</h3>
+    <ol start="3" type="i" reversed>
+      <li>Istanbul</li>
+      <li>Newyork</li>
+      <li>London</li>
+      <li>Paris</li>
+    </ol>
+
+    <dl>
+      <dt>Ethan</dt>
+      <dd>FS Instructor</dd>
+      <dt>Helen</dt>
+      <dd>FS Instructor</dd>
+    </dl>
+    <hr />
+
+    <!-- images -->
+    <img src="./images/newyork.jpg" alt="Newyork" width="330px" />
+
+    <img src="./images/sea1.jpg" alt="Seaside" width="200px" />
+
+    <p>images</p>
+
+    <!-- <p> blok element bulundugu satiri kaplar -->
+    <!-- img inline element kendisi kadar yer kaplar. tum alani kaplamiyor bu nedenle resimler yan yana oldu -->
+
+    <img
+      src="https://yt3.ggpht.com/9G9SnKyyUUHgnyWHdYT1T8Rg00I-zbs1BE-5p0D-rlWNR422iC6-Mvuz3c3mzt0adhsOpjKeays=s900-c-k-c0x00ffffff-no-rj"
+      alt="Clarusway" width="330px"/>
+
+      <!-- sayfaya sigdirmak icin (alt + z) -->
+
+      <!-- Tables -->
+
+      <table border="1" width="50%" style="border-collapse: collapse;">
+        <caption style="text-align: right; caption-side: bottom;">
+          Instructor and Path Info
+        </caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Path</th>
+            <th>Lesson</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ethan</td>
+            <td colspan="2">FS Lesson</td>
+            <!-- <td>HTML-CSS</td> -->
+          </tr>
+
+          <tr>
+            <td>Helen</td>
+            <td>FS</td>
+            <td rowspan="2">HTML-CSS-React</td>
+          </tr>
+
+          <tr>
+            <td>Harvey</td>
+            <td>FS</td>
+            <!-- <td>HTML-CSS-React</td> -->
+          </tr>
+        </tbody>
+
+      </table>
+
+      <!-- link -->
+      <a href="https://www.google.com/" target="_blank">Google Page</a>
+      <a href="https://clarusway.com/" target="_blank">Clarusway Web Site</a>
+      <p>
+        <a href="https://clarusway.com/" target="_blank">Clarusway Web Site</a>
+      </p>
+      <a href="https://www.google.com/" target="_blank">Google Page</a>
+      
+
+      <a href="https://clarusway.com/" target="_blank">
+        <img src="./images/cw-favicon.jpg" alt="clarusway" width="100px">
+      </a>
+      <p><a href="./images.zip">Download file</a></p>
+
+      <iframe src="https://clarusway.com/" frameborder="0" width="50%"></iframe>
+      
+      <iframe width="50%" 
+      src="https://www.youtube.com/embed/N6-WKG-LaaE" 
+      title="YouTube video player" 
+      frameborder="1" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+
+      <div class="first" style="color: red;">
+        <h2 id="first-heading">First Paragraph</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus distinctio fugiat, possimus ea repellendus asperiores, eum cum enim, error cumque sunt nulla. Facere, molestias nam distinctio vitae voluptatem debitis laborum!
+        
+        </p>
+      </div>
+      <div class="first" style="color: blue;">
+        <h2 id="second-heading">Second paragraph</h2>
+        <p>
+           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi explicabo tempora, laboriosam nobis nesciunt corporis provident dolore vitae natus ipsa repellat eveniet consequuntur obcaecati! Saepe perspiciatis vero minima est rerum!</p>
+      </div>
+
+      <div class="second" style="color: aqua;">
+        <h2 id="third-heading">Second paragraph</h2>
+        <p>
+          <span id="span-word" style="color: tomato;">Lorem ipsum,</span> dolor sit amet consectetur adipisicing elit. Animi explicabo tempora, laboriosam nobis nesciunt corporis provident dolore vitae natus ipsa repellat eveniet consequuntur obcaecati! Saepe perspiciatis vero minima est rerum!</p>
+      </div>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </body>
 </html>
