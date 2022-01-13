@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Tasarim</title>
+    <style>
+        body{
+            border: solid;
+            margin: 30px;
+            margin-left: 300px;
+            padding: 10px;
+            width:900px;
+        }
+        h3{
+            text-align: center;
+        }
+        div.form-example {
+            display: table-row;
+        }
+        label.guvenlik, label.isim, label.soyisim,label.yas, label.dosya,label.eposta,
+        input.guvenlik, input.isim, input.soyisim,input.yas, input.dosya, input.eposta{
+            display: table-cell;
+            margin-bottom: 10px;
+        }
+
+        label.guvenlik, label.isim, label.soyisim,label.yas, label.dosya{
+            padding-right: 10px;
+        }
+        
+        
+        #deneyim1{
+            margin-left: 42px;
+        }
+        #deneyim2, #deneyim3, #deneyim4{
+            margin-left: 155px;
+        }
+        
+        #istiyorum{
+            margin-left: 25px;
+        }
+
+        #yas{
+            width: 45px;
+        }
+        legend{
+            font-weight: bold;
+        }
+
+       
+
+
+    </style>
+   
+</head>
+<body>
+    
+    <h3>ABC Tasarim Programi Kurulum ve Satis Sozlesmesi :) </h3>
+
+    
+    <form action="">
+        <fieldset>
+            <legend>Sozlesme Onay</legend>
+            <input type="checkbox" >
+            <label >Asagidaki bilgilerin dogrulugunu kabul ediyorum ve sozlesmesini onayliyorum.</label>
+            <br>
+            <input type="submit" value="Formu Kaydet">
+            <input type="reset" value="Formu Temizle">
+        </fieldset>
+        <fieldset>
+            <legend> Kisisel Bilgiler</legend>
+            <div class="form-example">
+                <label for="guven" class="guvenlik">Form Guvenlik ID</label>
+                <input type="text" name="security" id="guven" class="guvenlik">
+            </div>
+            <div class="form-example">
+                <label for="ad" class="isim">Ad</label>
+                <input type="text" name="username" class="isim" id="ad">
+            </div>
+            <div class="form-example">
+                <label for="soyad" class="soyisim">Soyad</label>
+                <input type="text" name="surname" class="soyisim" id="soyad">
+            </div>
+            <div  class="form-example">
+                <label for="yas" class="yas">Yas</label>
+                <input type="number" name="age" id="yas" class="yas">
+            </div>
+            <div class="form-example">
+                <label for="email" class="eposta">Mail Adresi</label>
+                <input type="email" name="email" id="email" class="eposta">
+            </div>
+            <div class="form-example">
+                <label for="dosya" class="dosya">Fotograf Ekle</label>
+                <input type="file" name="file" id="dosya" class="dosya">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Diger Bilgiler</legend>
+            <h5>Buradaki alanlar mesleki denyimi kapsar</h5>
+            <label for="tarih">Sektore Giris Tarihi
+                <input type="date" name="date" id="tarih">
+            </label>
+            
+            <br><br>
+                
+            <label for=""> Sektor Deneyimi
+                
+                <input type="radio" name="experience" id="deneyim1">
+                <label for="deneyim1">1-5 yil</label>
+                <br>
+                <input type="radio" name="experience" id="deneyim2">
+                <label for="deneyim2">6-10 yil</label>
+                <br>
+                <input type="radio" name="experience" id="deneyim3">
+                <label for="deneyim3">11-15 yil</label>
+                <br>
+                <input type="radio" name="experience" id="deneyim4">
+                <label for="deneyim4">15 uzeri yil</label>
+            
+            </label>    
+            <br><br>
+            <label>Programlama Dilleri:
+                <select name="laguage" multiple size="4">
+                    <option value="C#">C#</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Java">Java</option>
+                    <option value="Java2">Java</option>
+                    <option value="Java Script">Java Script</option>
+                </select>
+            </label>
+            <br><br>
+            <label for="maas">Maas Beklentisi</label>
+            <input type="range" name="ab" id="maas" >
+        </fieldset>
+        <fieldset>
+            <legend>Sozlesme Kopyasi</legend>
+            <textarea name="" id="" cols="30" rows="10">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dicta eligendi neque quod delectus, quam recusandae consequatur rem consequuntur eum nesciunt praesentium libero vel laboriosam sunt quo nam dignissimos nostrum?</textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Mail Listesi</legend>
+            
+            <label for="istiyorum">Mail listesine katilmak <b>istiyorum</b> </label>
+            <input type="radio" name="secim" id="istiyorum">
+            <br>
+            <label for="istemiyorum">Mail listesine katilmak <b><u>istemiyorum</u></b> </label>
+            <input type="radio" name="secim" id="istemiyorum">
+            
+
+        </fieldset>
+    </form>
+</body>
+</html>
