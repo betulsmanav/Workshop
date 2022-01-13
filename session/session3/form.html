@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Elements</title>
+</head>
+<body>
+    <form action="result.html" method="GET" name="myform">
+        <div>
+            <label for="cars">Choose a car:</label>
+            <br>
+            <select name="cars-select" id="cars" size="8" multiple required>
+                <optgroup label="Expencive Cars">
+                    <option value="porche">porche</option>
+                    <option value="masserati">masserati</option>
+                    <option value="ferrari">ferrari</option>
+                </optgroup>
+                <optgroup label="Tuplu ve Ofkeli">
+                    <option value="kartal-88">kartal 88</option>
+                    <option value="lada-samara">lada samara</option>
+                    <option value="murat-131">murat-131</option>
+                    </optgroup>
+                
+            </select>
+        </div>
+        <br/><br/>
+
+       <div>
+           <label for="message">Enter your comment here:</label>
+           <br/>
+           <textarea 
+            name="comment" 
+            id="message" 
+            cols="30" 
+            rows="10" 
+            placeholder="Enter your comment here" 
+            maxlength="100"
+            style="resize: none;" 
+           ></textarea>
+           <br/><br/>
+           <!-- resize:none textareanin boyutunu degistirme ozelligini engeller -->
+         
+           <div>
+            <label for="mybrowser">Browser :</label>
+            <br>
+            <input 
+             type="text" 
+             name="browser-option" 
+             id="mybrowser" 
+             list="browsers"
+             required
+            />
+
+            <datalist id="browsers">
+                <option value="Chrome"></option>
+                <option value="Safari"></option>
+                <option value="Brave"></option>
+                <option value="Mozilla"></option>
+                <option value="Opera"></option>
+                <option value="IE-10"></option>
+                <option value="IE-12"></option>
+            </datalist>
+         </div>
+        </div>
+        <br><br>
+
+        <fieldset style="width: 50%;">
+            <legend>personel Info</legend>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="name" id="firstname" placeholder="Ethan">
+            <br><br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lname" id="lastname" placeholder="Specter">
+        </fieldset>
+        <br><br>
+
+        <input type="submit" value="SEND">
+    </form>
+</body>
+</html>
